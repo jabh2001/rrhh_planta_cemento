@@ -5,6 +5,7 @@ import Drawer from "@mui/material/Drawer";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
+import LinkDrawerButton from "./buttons/LinkDrawerButton";
 import DrawerButton from "./buttons/DrawerButton";
 import DrawerButtonCollapse from "./buttons/DrawerButtonCollapse";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,19 +16,19 @@ type Props = {
 function Template({ children }: Props) {
   const drawerWidth: number = 200;
   return (
-    <>
+    <Box>
       <CssBaseline />
       <AppBar
         position="relative"
         sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
       >
         <Toolbar>
-          <Typography>Modulo 1</Typography>
+          <Typography>Control de recursos humanos</Typography>
         </Toolbar>
       </AppBar>
       <Box
         sx={{
-          width: drawerWidth,
+          display: "flex",
         }}
       >
         <Drawer
@@ -54,28 +55,25 @@ function Template({ children }: Props) {
           </Box>
           <Divider />
           <List disablePadding>
-            <DrawerButtonCollapse text="Collapse">
-              <DrawerButton text="Texto collapse 1" />
-              <DrawerButton text="Texto collapse 2" />
-              <DrawerButton text="Texto collapse 3" />
+            <LinkDrawerButton color="colored" href="/" text="Principal" />
+            <DrawerButtonCollapse text="Inventario">
+              <LinkDrawerButton href="/inventory" text="Inicio" />
             </DrawerButtonCollapse>
-            <DrawerButtonCollapse text="Collapse 2">
-              <DrawerButton text="Texto collapse 1" />
-              <DrawerButton text="Texto collapse 2" />
-              <DrawerButtonCollapse text="Inner Collapse">
-                <DrawerButton text="Texto collapse 1" />
-                <DrawerButton text="Texto collapse 2" />
-                <DrawerButton text="Texto collapse 3" />
-              </DrawerButtonCollapse>
+            <DrawerButtonCollapse text="Expedientes">
+              <LinkDrawerButton href="/files" text="Inicio" />
             </DrawerButtonCollapse>
-            <DrawerButton color="colored" text="Texto 1" />
-            <DrawerButton color="colored" text="Texto 2" />
-            <DrawerButton color="colored" text="Texto 3" />
+            <DrawerButtonCollapse text="Bolsas">
+              <LinkDrawerButton href="/bolsa" text="Inicio" />
+            </DrawerButtonCollapse>
+            <DrawerButtonCollapse text="Trabajadores">
+              <LinkDrawerButton href="/workers" text="Inicio" />
+            </DrawerButtonCollapse>
+            <DrawerButton color="colored" text="Cerrar sesion" />
           </List>
         </Drawer>
         <Container>{children}</Container>
       </Box>
-    </>
+    </Box>
   );
 }
 
