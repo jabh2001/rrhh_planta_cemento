@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { grey, lightBlue } from "@mui/material/colors";
+import { grey, lightBlue, red } from "@mui/material/colors";
 import React from "react";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 export default function CustomStyles({ children }: Props) {
   const primary = {
-    main: lightBlue[500],
+    main: red[500],
     contrastText: "#fff",
   };
   const secondary = {

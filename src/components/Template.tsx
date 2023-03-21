@@ -62,11 +62,12 @@ function Template({ children }: Props) {
             <DrawerButtonCollapse text="Expedientes">
               <LinkDrawerButton href="/files" text="Inicio" />
             </DrawerButtonCollapse>
-            <DrawerButtonCollapse text="Bolsas">
-              <LinkDrawerButton href="/bolsa" text="Inicio" />
+            <DrawerButtonCollapse text="Beneficios">
+              <LinkDrawerButton href="/benefits" text="Inicio" />
             </DrawerButtonCollapse>
             <DrawerButtonCollapse text="Trabajadores">
               <LinkDrawerButton href="/workers" text="Inicio" />
+              <LinkDrawerButton href="/workers/all" text="Lista" />
             </DrawerButtonCollapse>
             <DrawerButton color="colored" text="Cerrar sesion" />
           </List>
